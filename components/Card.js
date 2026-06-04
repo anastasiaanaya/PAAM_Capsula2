@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Pressable, Image, TouchableOpacity } from 'react-native';
 import {Swipeable} from 'react-native-gesture-handler/Swipeable';
 import { useRouter } from 'expo-router'; 
@@ -26,6 +26,9 @@ const BookCard = ({ id, titol, autor, any, estat, imatge, onToggle, onDelete }) 
         const nouEstatString = NUM_A_ESTAT[nouEstatNum]; 
 
         progress.value = withTiming(nouEstatNum, { duration: 300 });
+        useEffect(() => {
+            progress.value = withTiming(ESTAT_NUM[estat] || 0, { duration: 300 });
+        }, [estat]);
         onToggle(id, nouEstatString);
     };
 
@@ -49,7 +52,7 @@ const BookCard = ({ id, titol, autor, any, estat, imatge, onToggle, onDelete }) 
         <Swipeable renderRightActions={renderRightActions}>
             <Pressable onPress={() => router.push(`/book/${id}`)}>
                 <View style={styles.card}>
-                    <Animated.Image source={typeof imatge === 'string' ? { uri: imatge } : imatge}
+                    <Animated.Image source={imatge}
                     style={styles.image} 
                     sharedTransitionTag={`book-cover-${id}`} 
                     />

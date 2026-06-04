@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { BooksContext } from '../context/BooksContext';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import { useLocalSearchParams, Stack } from 'expo-router';
-import { LLIBRES } from '../../books';
 import Animated from 'react-native-reanimated';
 
 export default function BookDetailScreen() {

@@ -12,14 +12,6 @@ export default function RootLayout() {
         
           <Stack.Screen name="book/[id]" options={{ title: 'Detall del Llibre' }} />
         
-          {/*MODAL NATIU*/}
-          <Stack.Screen 
-            name="filters" 
-            options={{ 
-              presentation: 'modal',
-              title: 'Filtres de Cerca'
-            }} 
-          />
         </Stack>
       </BooksProvider>
     </GestureHandlerRootView>
