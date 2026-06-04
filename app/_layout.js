@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { BooksProvider } from './context/BooksContext';
+import { BooksProvider } from '../context/BooksContext';
 
 export default function RootLayout() {
   return (

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'; 
-import { BooksContext } from '../context/BooksContext';
+import { BooksContext } from '../../context/BooksContext';
 import { View, StyleSheet, FlatList } from 'react-native';
 import BookCard from '../../components/Card';
 
@@ -10,7 +10,7 @@ export default function MyListScreen() {
     updateBookStatus(id, nouEstatString);
   };
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item, index }) => (
     <BookCard
       id={item.id}
       titol={item.title}
@@ -20,6 +20,7 @@ export default function MyListScreen() {
       imatge={item.coverUrl}
       onToggle={toggleEstat}
       onDelete={() => deleteBook(item.id)}
+      index={index}
     />
   );
 

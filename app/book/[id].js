@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { BooksContext } from '../context/BooksContext';
+import { BooksContext } from '../../context/BooksContext';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import { useLocalSearchParams, Stack } from 'expo-router';
 import Animated from 'react-native-reanimated';
